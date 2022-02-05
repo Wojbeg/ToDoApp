@@ -34,5 +34,4 @@ Project is created with:
  <img src="Illustrations/create_new_task.png" height = "300">
  <img src="Illustrations/select_date.png" height = "300">
  <img src="Illustrations/undo_delete_task.png" height = "300">
- <img src="Illustrations/main_screen_no_tasks.png" height = "300">
 </p>
