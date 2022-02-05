@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/WelcomeTitle"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/welcomeInfo"
+                android:textAlignment="center"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/purple_500"
+                />
+
+            <TextView
+                android:id="@+id/AuthorInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="@string/authorInfo"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/WelcomeTitle" />
+
+
+            <TextView
+                android:id="@+id/AboutInfoText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="@string/languageInfo"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AuthorInfo" />
+
+            <Spinner
+                android:id="@+id/languageSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:entries="@array/languages"
+                android:textAlignment="viewStart"
+                app:layout_constraintEnd_toEndOf="@+id/AboutInfoText"
+                app:layout_constraintStart_toStartOf="@+id/AboutInfoText"
+                app:layout_constraintTop_toBottomOf="@+id/AboutInfoText" />
+
+            <TextView
+                android:id="@+id/possibilitiesInfoText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="@string/possibilitiesInfo"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/languageSpinner" />
+
+
+            <CheckBox
+                android:id="@+id/doNotShowAgainCheckBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/doNotShowAgain"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/possibilitiesInfoText"
+                app:layout_constraintStart_toStartOf="@+id/possibilitiesInfoText"
+                app:layout_constraintTop_toBottomOf="@+id/possibilitiesInfoText" />
+
+            <Button
+                android:id="@+id/welcomeOkBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/custom_button"
+                android:elevation="15dp"
+                android:text="@string/startApp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/doNotShowAgainCheckBox" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

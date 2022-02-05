@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ToDoApp</string>
+
+    <!-- Main activity -->
+    <string name="tasks">Zadania</string>
+    <string name="noTasks">Brak zadań</string>
+    <string name="noTasksMoreInfo">Miłego dnia\nlub wciśnij + żeby stworzyć nowe zadania</string>
+
+    <!-- Custom dialogs -->
+    <string name="customOops">Ups!</string>
+    <string name="aboutInfo">Coś poszło nie tak \nNie można zapisać</string>
+    <string name="tryAgain">Spróbuj ponownie</string>
+    <string name="delete">Usuń</string>
+
+    <string name="delete_success">Usunięto zadanie</string>
+    <string name="undo">Cofnij</string>
+
+    <string name="deleteInfo">Uwaga! \nTej operacji nie można cofnąć</string>
+    <string name="cancel">Zamknij</string>
+
+    <!-- Create new Task / Edit task-->
+    <string name="createNewTask">Stwórz nowe zadanie</string>
+    <string name="taskName">Napisz nazwe zadania</string>
+    <string name="taskTypeInfo">Wybierz typ zadania</string>
+    <string name="selectDateInfo">Wybierz datę</string>
+    <string name="selectPriorityInfo">Wybierz priorytet</string>
+    <string name="changeDate">Zmień datę</string>
+    <string name="newTaskCancel">Zamknij</string>
+    <string name="newTaskSave">Zapisz</string>
+
+    <string name="emptyNameError">Nazwa zadania nie może być pusta</string>
+
+    <string name="taskAdded">Zadanie zostało dodane</string>
+    <string name="taskEdited">Zadanie zostało zapisane</string>
+
+    <string name="editTask">Edytuj zadanie</string>
+
+    <!-- Types of tasks -->
+
+    <string-array name="taskType">
+        <item>Praca</item>
+        <item>Zakupy</item>
+        <item>Inne</item>
+    </string-array>
+
+    <!-- Sorting types -->
+    <string name="DefaultSort">Domyślnie</string>
+    <string name="AlphabetSort">Alfabetycznie</string>
+    <string name="DateSort">Data</string>
+    <string name="PrioritySort">Priorytet</string>
+    <string name="TypeSort">Typ</string>
+    <string name="UndoneSort">Niezakończone</string>
+
+    <string name="sortInfoAlphab">Posortowano alfabetycznie</string>
+    <string name="sortInfoDate">Posortowano po dacie</string>
+    <string name="sortInfoPriority">Posortowano po priorytecie</string>
+    <string name="sortInfoType">Posortowano po typie</string>
+    <string name="sortInfoUnfinished">Posortowano po wykonanym statusie zadania</string>
+    <string name="sortInfoDefault">Domyślne sortowanie</string>
+
+    <string name="welcomeInfo">Witamy w ToDoApp</string>
+    <string name="authorInfo">Aplikacja została stworzona przez Wojciecha Begierskiego</string>
+    <string name="languageInfo">Proszę wybrać język:</string>
+    <string name="possibilitiesInfo">
+        W tej aplikacji możesz stworzyć listę rzeczy do zrobienia.\n
+        Żeby stworzyć zadanie kliknij + przycisk.\n
+        Aby edytować zadanie przesuń je w prawo.\n
+        Aby usunąć zadanie przesuń je w lewo.
+    </string>
+    <string name="doNotShowAgain">Nie pokazuj tego ponownie</string>
+    <string name="startApp">OK</string>
+
+    <string-array name="languages">
+        <item>Polski</item>
+        <item>English</item>
+    </string-array>
+
+</resources>

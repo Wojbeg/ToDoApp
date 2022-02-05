@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/AlphabetSort"
+        android:title="@string/AlphabetSort"/>
+
+    <item android:id="@+id/DateSort"
+        android:title="@string/DateSort"/>
+
+    <item android:id="@+id/PrioritySort"
+        android:title="@string/PrioritySort"/>
+
+    <item android:id="@+id/TypeSort"
+        android:title="@string/TypeSort"/>
+
+    <item android:id="@+id/UnfinishedSort"
+        android:title="@string/UndoneSort"/>
+
+    <item android:id="@+id/DefaultSort"
+        android:title="@string/DefaultSort"/>
+
+</menu>

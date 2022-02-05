@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.CreateTask">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.wojbeg.todoapp.ui.viewmodels.createTaskViewModel.CreateTaskViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_200">
+
+        <TextView
+            android:id="@+id/newTaskTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/createNewTask"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/corners"
+            app:layout_constraintBottom_toTopOf="@+id/bottomButtonsContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/newTaskTitle"
+            app:layout_constraintVertical_bias="1">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="32dp">
+
+
+                    <EditText
+                        android:id="@+id/taskName"
+
+                        android:text="@={viewmodel.title}"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="@string/taskName"
+                        android:layout_marginTop="40dp"
+                        android:inputType="text"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.8" />
+
+                    <TextView
+                        tools:viewBindingIgnore="true"
+                        android:id="@+id/selectTypeInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="@string/taskTypeInfo"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/taskName"
+                        app:layout_constraintTop_toBottomOf="@+id/taskName" />
+
+                    <Spinner
+                        android:id="@+id/typeSpinner"
+                        android:padding="5dp"
+                        android:entries="@array/taskType"
+                        android:onItemSelected="@{viewmodel::onSelectItem}"
+                        android:background="@drawable/spinner_style"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="viewStart"
+                        app:layout_constraintEnd_toEndOf="@+id/taskName"
+                        app:layout_constraintStart_toStartOf="@+id/selectTypeInfo"
+                        app:layout_constraintTop_toBottomOf="@+id/selectTypeInfo" />
+
+                    <TextView
+                        viewBindingIgnore="true"
+                        android:id="@+id/selectDateInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selectDateInfo"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="25dp"
+                        app:layout_constraintStart_toStartOf="@+id/taskName"
+                        app:layout_constraintTop_toBottomOf="@+id/typeSpinner" />
+
+                    <TextView
+                        android:id="@+id/dayValue"
+                        android:text="@{viewmodel.day}"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        tools:text="DD"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/selectDateInfo"
+                        app:layout_constraintTop_toBottomOf="@+id/selectDateInfo" />
+
+                    <TextView
+                        android:id="@+id/monthValue"
+                        android:text="@{viewmodel.month}"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        tools:text="MM"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/dayValue"
+                        app:layout_constraintStart_toEndOf="@id/dayValue"
+                        app:layout_constraintBottom_toBottomOf="@id/dayValue"/>
+
+                    <TextView
+                        android:id="@+id/yearValue"
+                        android:text="@{viewmodel.year}"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        tools:text="YY"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/monthValue"
+                        app:layout_constraintStart_toEndOf="@id/monthValue"
+                        app:layout_constraintBottom_toBottomOf="@id/monthValue"/>
+
+                    <Button
+                        android:id="@+id/changeDateBtn"
+                        android:onClick="@{viewmodel::onChangeDateBtn}"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:text="@string/changeDate"
+                        android:textSize="13sp"
+                        android:drawableLeft="@drawable/ic_baseline_edit_calendar_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/yearValue"
+                        app:layout_constraintEnd_toEndOf="@+id/taskName"
+                        app:layout_constraintStart_toEndOf="@+id/yearValue"
+                        app:layout_constraintTop_toTopOf="@+id/yearValue"
+                        app:layout_constraintHorizontal_bias="1"/>
+
+                    <TextView
+                        viewBindingIgnore="true"
+                        android:id="@+id/dotOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/dayValue"
+                        app:layout_constraintStart_toEndOf="@id/dayValue"
+                        app:layout_constraintBottom_toBottomOf="@id/dayValue" />
+
+                    <TextView
+                        viewBindingIgnore="true"
+                        android:id="@+id/dotTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/monthValue"
+                        app:layout_constraintStart_toEndOf="@id/monthValue"
+                        app:layout_constraintBottom_toBottomOf="@id/monthValue" />
+
+                    <TextView
+                        viewBindingIgnore="true"
+                        android:id="@+id/selectPriorityInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selectPriorityInfo"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="25dp"
+                        app:layout_constraintStart_toStartOf="@+id/taskName"
+                        app:layout_constraintTop_toBottomOf="@+id/dayValue" />
+
+                    <Spinner
+                        android:id="@+id/prioritySpinner"
+                        android:layout_width="0dp"
+                        android:onItemSelected="@{viewmodel::onSelectItemPriority}"
+
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_style"
+                        android:padding="5dp"
+                        android:spinnerMode="dropdown"
+                        android:textAlignment="viewStart"
+                        app:layout_constraintBottom_toBottomOf="@+id/selectPriorityInfo"
+                        app:layout_constraintEnd_toEndOf="@+id/changeDateBtn"
+                        app:layout_constraintStart_toStartOf="@+id/changeDateBtn"
+                        app:layout_constraintTop_toTopOf="@+id/selectPriorityInfo" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomButtonsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <Button
+                android:id="@+id/cancelBtn"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="8dp"
+                android:onClick="@{viewmodel::onCloseBtnClick}"
+                android:text="@string/newTaskCancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/saveBtn"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="8dp"
+                android:text="@string/newTaskSave"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

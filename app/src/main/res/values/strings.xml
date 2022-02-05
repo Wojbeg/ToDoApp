@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">ToDoApp</string>
+
+    <!-- Main activity -->
+    <string name="tasks">Tasks</string>
+    <string name="noTasks">No Tasks</string>
+    <string name="noTasksMoreInfo">Enjoy your day\n or click + button to add new tasks</string>
+
+    <!-- Custom dialogs -->
+    <string name="customOops">Oops!</string>
+    <string name="aboutInfo">Something went wrong \nCannot save data</string>
+    <string name="tryAgain">Try again</string>
+    <string name="delete">Delete</string>
+
+    <string name="delete_success">Successfully deleted task</string>
+    <string name="undo">Undo</string>
+
+    <string name="deleteInfo">Warning! \nThis operation cannot be undone</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Create new Task / Edit task-->
+    <string name="createNewTask">Create new task</string>
+    <string name="taskName">Write task name</string>
+    <string name="taskTypeInfo">Select Task Type</string>
+    <string name="selectDateInfo">Select Date</string>
+    <string name="selectPriorityInfo">Select Priority</string>
+    <string name="changeDate">Change Date</string>
+    <string name="newTaskCancel">Cancel</string>
+    <string name="newTaskSave">Save</string>
+
+    <string name="emptyNameError">Task name cannot be empty</string>
+
+    <string name="taskAdded">Task successfully added</string>
+    <string name="taskEdited">Task successfully edited</string>
+
+    <string name="editTask">Edit your task</string>
+
+    <!-- Types of tasks -->
+
+    <string-array name="taskType">
+        <item>Work</item>
+        <item>Shopping</item>
+        <item>Education</item>
+        <item>Sports</item>
+        <item>Entertainment</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Sorting types -->
+    <string name="DefaultSort">Default</string>
+    <string name="AlphabetSort">Alphabetically</string>
+    <string name="DateSort">Date</string>
+    <string name="PrioritySort">Priority</string>
+    <string name="TypeSort">Type</string>
+    <string name="UndoneSort">Unfinished</string>
+
+    <string name="sortInfoAlphab">Sorted alphabetically</string>
+    <string name="sortInfoDate">Sorted by date</string>
+    <string name="sortInfoPriority">Sorted by priority</string>
+    <string name="sortInfoType">Sorted by type</string>
+    <string name="sortInfoUnfinished">Sorted by task completion status</string>
+    <string name="sortInfoDefault">Sorted by default</string>
+
+    <string name="welcomeInfo">Welcome to ToDoApp</string>
+    <string name="authorInfo">This app was made by Wojciech Begierski</string>
+    <string name="languageInfo">Please choose your language:</string>
+    <string name="possibilitiesInfo">
+        In this application you can create your to-do list.\n
+        To create a task, click the + button.\n
+        To edit a task, slide it to the right.\n
+        To delete a task, slide it to the left.
+    </string>
+    <string name="doNotShowAgain">Do not show this again</string>
+    <string name="startApp">OK</string>
+
+    <string-array name="languages">
+        <item>Polski</item>
+        <item>English</item>
+    </string-array>
+
+</resources>
